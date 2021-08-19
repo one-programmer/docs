@@ -8,5 +8,5 @@ jobs:
       uses: actions/checkout@v2
     - name: Gitbook Action                    # https://github.com/ZanderZhao/gitbook-action/releases
       uses: ZanderZhao/gitbook-action@master # -> or ZanderZhao/gitbook-action@master.If not use master click above, use latest please 
-      env:                                   #    or fork this repo and use YourName/gitbook-action@master
+      with:                                   #    or fork this repo and use YourName/gitbook-action@master
         token: ${{ secrets.PERSONAL_TOKEN }}  # -> remember add this in settings/secrets as following
