@@ -1,8 +1,5 @@
 name: 'Gitbook Action Build'
-on:
-  push:
-    branches:
-      - master  # trigger branch
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,6 +7,6 @@ jobs:
     - name: Checkout action
       uses: actions/checkout@v2
     - name: Gitbook Action                    # https://github.com/ZanderZhao/gitbook-action/releases
-      uses: one-programmer/docs@master  # -> or ZanderZhao/gitbook-action@master.If not use master click above, use latest please 
+      uses: ZanderZhao/gitbook-action@master # -> or ZanderZhao/gitbook-action@master.If not use master click above, use latest please 
       env:                                   #    or fork this repo and use YourName/gitbook-action@master
         token: ${{ secrets.PERSONAL_TOKEN }}  # -> remember add this in settings/secrets as following
