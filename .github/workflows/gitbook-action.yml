@@ -13,5 +13,5 @@ jobs:
       uses: ZanderZhao/gitbook-action@master # -> or ZanderZhao/gitbook-action@master.If not use master click above, use latest please 
       with:                                   #    or fork this repo and use YourName/gitbook-action@master
         token: ${{ secrets.PERSONAL_TOKEN }}  # -> remember add this in settings/secrets as following
-        source_dir: book1
-        publish_dir: book1
+        source_dir: http-api-design
+        publish_dir: http-api-design
