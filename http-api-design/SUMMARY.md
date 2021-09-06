@@ -16,7 +16,7 @@
     * [为方便起见，支持非id解引用](requests/support-non-id-dereferencing-for-convenience.md)
     * [最小化路径嵌套](requests/minimize-path-nesting.md)
 * [响应](responses/README.md)
-  * [返回适当的状态代码](responses/return-proper-status-codes.md)
+  * [返回适当的状态代码](responses/return-appropriate-status-codes.md)
   * [在可用的情况下提供完整资源](responses/provide-full-resources-where-available.md)
   * [提供资源 (UU)ID](responses/provide-resource-uuids.md)
   * [提供标准时间戳](responses/provide-standard-timestamps.md)
