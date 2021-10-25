@@ -1,1 +1,9 @@
-{ "language": "zh-hans" }
+{
+  "language": "zh-hans",
+  "plugins": ["ga"],
+  "pluginsConfig": {
+    "ga": {
+      "token": "G-555CQNQ1MD"
+    }
+  }
+}
