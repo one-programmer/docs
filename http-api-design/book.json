@@ -1,9 +1,11 @@
 {
   "language": "zh-hans",
-  "plugins": ["ga"],
+  "plugins": [
+    "statistics"
+  ],
   "pluginsConfig": {
-    "ga": {
-      "token": "G-555CQNQ1MD"
+    "statistics": {
+      "google_id": "G-555CQNQ1MD"
     }
   }
 }
