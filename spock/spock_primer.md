@@ -229,5 +229,34 @@ EmptyStackException e = thrown()
 e.cause == null
 ```
 
-这种语法有两个小优点: 首先，异常变量是强类型的，这使 ide 更容易提供代码完成。其次，这个条件读起来有点像一个句子(“然后抛出一个 EmptyStackException”)。注意，如果没有异常类型传递给 thrown ()方法，则从左侧的变量类型推断出异常类型。
+这种语法有两个小优点: 首先，异常变量是强类型的，这使 IDE 更容易提供代码补全。其次，这个条件读起来更像是一个句子（“然后抛出一个 EmptyStackException”）。
+请注意，如果没有将异常类型传递给该`thrown()`方法，则会从左侧的变量类型推断出异常类型。
+
+有时候我们需要表达一个异常不应该被抛出。例如，让我们尝试来表示`HashMap`应该接受`null`键：
+```groovy
+def "HashMap accepts null key"() {
+  setup:
+  def map = new HashMap()
+  map.put(null, "elem")
+}
+```
+
+这是可行的，但并没有展示代码的意图。是不是某人还没实现完这个方法就撒手不管了？毕竟，条件在哪里呢？幸运的是，我们可以做得更好：
+```groovy
+def "HashMap accepts null key"() {
+  given:
+  def map = new HashMap()
+
+  when:
+  map.put(null, "elem")
+
+  then:
+  notThrown(NullPointerException)
+}
+```
+
+通过使用`notThrown()`，我们明确表示了不应该抛出`NullPointerException`。
+（根据`Map.put()`的约定，对于不支持`null`键的map，这是正确的做法。）但是，如果抛出任何其他异常，该方法也会失败。
+
+
 ### 规范即文档
